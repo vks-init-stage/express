@@ -2,10 +2,12 @@
 framework: "mocha"
 postMerge:
   pattern:
-    - "./test/acceptance/*.js"
+    - "./test/*.js"
+    - "./test/*/*.js"
 preMerge:
   pattern:
-    - "./test/acceptance/*.js"
+    - "./test/*.js"
+    - "./test/*/*.js"
 preRun:
   - npm i
 postRun:
