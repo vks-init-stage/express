@@ -1,3 +1,5 @@
+'use strict'
+
 /**
  * Module dependencies.
  */
@@ -32,7 +34,7 @@ app.use('/api', function(req, res, next){
   if (!key) return next(error(400, 'api key required'));
 
   // key is invalid
-  if (!~apiKeys.indexOf(key)) return next(error(401, 'invalid api key'));
+  if (apiKeys.indexOf(key) === -1) return next(error(401, 'invalid api key'))
 
   // all good, store req.key for route access
   req.key = key;
@@ -55,7 +57,7 @@ var repos = [
 ];
 
 var users = [
-    { name: 'tobi' }
+  { name: 'tobi' }
   , { name: 'loki' }
   , { name: 'jane' }
 ];
@@ -105,7 +107,7 @@ app.use(function(err, req, res, next){
 // invoke next() and do not respond.
 app.use(function(req, res){
   res.status(404);
-  res.send({ error: "Lame, can't find that" });
+  res.send({ error: "Sorry, can't find that" })
 });
 
 /* istanbul ignore next */
