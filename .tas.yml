@@ -1,8 +1,8 @@
 ---
 framework: mocha     
-preRun:
-  command:
-    - npm ci          
+# preRun:
+#   command:
+#     - npm ci          
 postMerge:
   pattern: 
 #     - "./test/*.js"
