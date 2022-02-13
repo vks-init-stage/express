@@ -1,15 +1,15 @@
 ---
 framework: mocha     
-# preRun:
-#   command:
-#     - npm ci          
+preRun:
+  command:
+    - npm install          
 postMerge:
   pattern: 
-#     - "./test/*.js"
+    - "./test/*.js"
     - "./test/*/*.js"
 preMerge:
   pattern:
-#     - "./test/*.js"
+    - "./test/*.js"
     - "./test/*/*.js"
 postRun:
   command:
